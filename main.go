@@ -18,14 +18,8 @@ func main() {
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
-func randSeq(n int) string {
-	b := make([]rune, n)
-	for i := range b {
-		b[i] = letters[rand.Intn(len(letters))]
-	}
-	return string(b)
-}
-
 func hello(res http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(res, randSeq(250000000))
+	for i := 0; i < 250000000; i++ {
+		fmt.Fprintln(res, string(letters[rand.Intn(len(letters))]))
+	}
 }

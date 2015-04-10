@@ -27,5 +27,5 @@ func randSeq(n int) string {
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(res, randSeq(1000000000))
+	fmt.Fprintln(res, randSeq(250000000))
 }

@@ -1,3 +1,3 @@
-module github.com/aprofeit/slowroller
+module github.com/aprofeit/garbage
 
 go 1.14

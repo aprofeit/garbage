@@ -18,8 +18,11 @@ func main() {
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
+w.Header().Set("Content-Disposition", "attachment; filename=garbage.txt")
+w.Header().Set("Content-Type", req.Header.Get("Content-Type"))
+
 func hello(res http.ResponseWriter, req *http.Request) {
-	for i := 0; i < 250000000; i++ {
+	for i := 0; i < 1000; i++ {
 		fmt.Fprintln(res, string(letters[rand.Intn(len(letters))]))
 	}
 }
